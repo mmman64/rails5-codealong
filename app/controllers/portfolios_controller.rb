@@ -28,14 +28,21 @@ class PortfoliosController < ApplicationController
   end
 
   def update
-  respond_to do |format|
-    if @portfolio_item.update(portfolio_params)
-      format.html { redirect_to portfolios_path, notice: "Portfolio item was successfully updated." }
-    else
-      format.html { render :edit }
+    respond_to do |format|
+      if @portfolio_item.update(portfolio_params)
+        format.html { redirect_to portfolios_path, notice: "Portfolio item was successfully updated." }
+      else
+        format.html { render :edit }
+      end
     end
   end
-end
+
+  def destroy
+    @portfolio_item.destroy
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: "Record was removed." }
+    end
+  end
 
   private
 

@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-        # same as blog_path(@blog), format.html just means it will be available in the browser 
+        # same as blog_path(@blog), format.html just means it will be available in the browser
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
       else
         format.html { render :new }
@@ -56,7 +56,6 @@ class BlogsController < ApplicationController
     @blog.destroy
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
