@@ -1,14 +1,12 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /blogs
-  # GET /blogs.json
   def index
     @blogs = Blog.all
   end
 
   # GET /blogs/1
-  # GET /blogs/1.json
   def show
   end
 
@@ -22,7 +20,6 @@ class BlogsController < ApplicationController
   end
 
   # POST /blogs
-  # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
 
@@ -37,21 +34,17 @@ class BlogsController < ApplicationController
   end
 
   # PATCH/PUT /blogs/1
-  # PATCH/PUT /blogs/1.json
   def update
     respond_to do |format|
       if @blog.update(blog_params)
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog }
       else
         format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /blogs/1
-  # DELETE /blogs/1.json
   def destroy
     @blog.destroy
     respond_to do |format|
@@ -59,10 +52,16 @@ class BlogsController < ApplicationController
     end
   end
 
+  def toggle_status
+    @blog.draft? ? @blog.published! : @blog.draft!
+    redirect_to blogs_url, notice: "Post status has been updated."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+      # friendly ensures slug is mapped to id which is then used to query DB
+      @blog = Blog.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
