@@ -4,10 +4,14 @@ class BlogsController < ApplicationController
   # GET /blogs
   def index
     @blogs = Blog.all
+    @page_title = "My Portfolio Blog"
   end
 
   # GET /blogs/1
   def show
+    @page_title = @blog.title
+    # Not best practice but just an example
+    @seo_keywords = @blog.body
   end
 
   # GET /blogs/new
