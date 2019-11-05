@@ -46,7 +46,6 @@ body {
 }
 
 .cover-container {
-  max-width: 55em;
   text-align: center;
 }
 
@@ -94,6 +93,14 @@ body {
   }
 }
 
+@media (min-width: 62em) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 55rem;
+  }
+}
+
 
 /*
  * Cover
@@ -120,11 +127,20 @@ body {
  * Custom styles
  */
 
- .card-body {
-   color: black;
-   text-align: left;
- }
+.card-body {
+  color: black;
+  text-align: left;
+}
 
- .auth-links a {
-   color: black;
- }
+.auth-links a {
+  color: black;
+}
+
+.register-text {
+  text-align: right;
+}
+
+.login > .card {
+  width: 22rem;
+  margin: 0 auto;
+}
