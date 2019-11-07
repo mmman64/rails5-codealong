@@ -57,3 +57,5 @@ gem 'devise', '~> 4.2'
 gem "bootstrap", ">= 4.3.1"
 gem 'sprockets-rails', '2.3.2'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
