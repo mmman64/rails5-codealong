@@ -14,6 +14,8 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
+  position: relative;
+  min-height: 100vh;
 }
 
 h1,
@@ -172,7 +174,10 @@ h6,
  * Footer
  */
 
-.blog-footer {
+.general-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   padding: 2.5rem 0;
   color: #999;
   text-align: center;
@@ -180,7 +185,7 @@ h6,
   border-top: .05rem solid #e5e5e5;
 }
 
-.blog-footer p:last-child {
+.general-footer p:last-child {
   margin-bottom: 0;
 }
 
