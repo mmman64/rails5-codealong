@@ -10,7 +10,6 @@
     "html",
     "jade",
     "pug",
-    "php",
-    "javascript"
+    "php"
   ]
 }
