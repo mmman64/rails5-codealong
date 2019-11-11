@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "jquery-ui";
+@import "gritter";
 
 body {
   min-height: 100vh;
@@ -70,4 +71,8 @@ body {
 
 .portfolio-form {
   padding: 20px;
+}
+
+.portfolio-container {
+  padding: 30px;
 }
