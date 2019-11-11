@@ -32,10 +32,7 @@ body {
 
 .album {
   min-height: 50rem;
-  /* Can be removed; just added for demo purposes */
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: #f7f7f7;
+  padding-bottom: 50px;
 }
 
 .card {
@@ -58,7 +55,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 2.5rem 0;
+  padding: 35px 0;
   color: #999;
   text-align: center;
   background-color: #f9f9f9;

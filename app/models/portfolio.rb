@@ -10,6 +10,10 @@ class Portfolio < ApplicationRecord
   mount_uploader :thumb_image, PortfolioUploader
   mount_uploader :main_image, PortfolioUploader
 
+  def self.by_position
+    order("position ASC")
+  end
+
   after_initialize :set_defaults
 
   def set_defaults
@@ -17,7 +21,5 @@ class Portfolio < ApplicationRecord
     self.thumb_image ||= Placeholder.image_generator(height: "350", width: "200")
   end
 
-  def self.by_position
-    order("position ASC")
-  end
+
 end
