@@ -58,7 +58,7 @@ gem "bootstrap", ">= 4.3.1"
 gem 'sprockets-rails', '2.3.2'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'kaminari', '~> 1.2'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'carrierwave', '~> 2.0', '>= 2.0.2'
 gem 'carrierwave-aws', '~> 1.4'
